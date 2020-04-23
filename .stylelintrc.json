@@ -1,23 +1,13 @@
 {
-  "extends": "stylelint-config-sass-guidelines",
-  "plugins": [
-		"stylelint-order"
-	],
- "rules": {   
-  "order/order": [
-    "custom-properties",
-    "declarations"
-  ],
-  "order/properties-alphabetical-order": true
- },
- "stylelint": {
-  "extends": [
-      "stylelint-config-idiomatic-order",
-      "./node_modules/prettier-stylelint/config.js"
-  ],
+  "extends": ["stylelint-config-sass-guidelines", "stylelint-config-prettier"],
+  "plugins": ["stylelint-order", "stylelint-scss", "stylelint-prettier"],
   "rules": {
-      "indentation": 4,
-      "string-quotes": "single"
+    "prettier/prettier": true,
+
+    "scss/dollar-variable-pattern": "^foo",
+    "scss/selector-no-redundant-nesting-selector": true,
+
+    "order/order": ["custom-properties", "declarations"],
+    "order/properties-alphabetical-order": true
   }
-}
 }
